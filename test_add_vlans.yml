@@ -1,0 +1,16 @@
+---
+- hosts: #[name of host in inventory file]
+  connection: network_cli
+  gather_facts: no
+
+  vars:
+    ansible_network_os: routeros
+    ansible_user: admin
+
+  tasks:
+
+    - name: Adding VLANs
+      routeros_command:
+        commands:
+          - :local x
+          - :for x from 20 to 30 do={/interface vlan add vlan-id_$x name="VLAN_$x" interface=ether2}
