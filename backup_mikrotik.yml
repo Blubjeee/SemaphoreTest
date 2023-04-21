@@ -1,0 +1,32 @@
+# Place in inventory file
+# ------------------------
+# [mikrotik]
+# 192.168.88.2
+#
+# [mikrotik:vars]
+# ansible_user=setup
+# ansible_password=setup
+# ansible_connection=ansible.netcommon.network_cli
+# ansible_network_os=community.routeros.routeros
+# ansible_python_interpreter=/usr/bin/python3
+# ansible_command_timeout=120
+
+---
+- name: Backup Mikrotik
+  hosts: mikrotik
+  gather_facts: false
+  vars:
+    backup_dir: "/home/mikrotik/backup"
+  tasks:
+    - name: Export
+      ansible.builtin.shell: >-
+                sshpass -p '{{ ansible_password }}' ssh -o StrictHostKeyChecking=no {{ ansible_user }}@{{ inventory_hostname }} /export
+      register: export
+      delegate_to: localhost
+
+    - name: Backup
+      ansible.builtin.copy:
+        content: "{{ export.stdout }}"
+        dest: "{{ backup_dir }}/{{ inventory_hostname }}_config.{{ lookup('pipe', 'date +%Y-%m-%d@%H:%M:%S') }}"
+      when: export is defined
+      delegate_to: localhost
