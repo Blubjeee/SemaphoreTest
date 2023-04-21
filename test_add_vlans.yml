@@ -1,5 +1,5 @@
 ---
-- hosts: #[name of host in inventory file]
+- hosts: all
   connection: network_cli
   gather_facts: no
 
