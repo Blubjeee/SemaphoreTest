@@ -8,7 +8,6 @@
    ansible_user: admin
    
 - tasks:
-
-     - name: Add user
-       routeros_command:
-        commands: "/user add name=test group=test password=test"
+    name: Add user
+    routeros_command:
+     commands: "/user add name=test group=test password=test"
