@@ -1,7 +1,7 @@
 ---
- hosts: 192.168.200.71
- connection: network_cli
- gather_facts: no
+ - hosts: 192.168.200.71
+   connection: network_cli
+   gather_facts: no
 
  vars:
   ansible_network_os: routeros
