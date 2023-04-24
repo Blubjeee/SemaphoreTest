@@ -11,5 +11,4 @@
 
      - name: Add user
        routeros_command:
-        commands:
-          :/user add name=test group=test password=test
+        commands: "/user add name=test group=test password=test"
