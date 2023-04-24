@@ -6,7 +6,7 @@
    - ansible_user: admin
   tasks:
   
-    - name Add test user
+    - name: Add test user
       routeros_command:
        commands: /user add name=test group=test password=test
 
