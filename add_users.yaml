@@ -1,5 +1,5 @@
 ---
-  hosts: 192.168.200.71
+  host: 192.168.200.71
   connection: network_cli
   gather_facts: no
 
