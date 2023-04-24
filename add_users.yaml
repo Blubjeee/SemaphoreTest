@@ -9,6 +9,7 @@
 
   - tasks:
 
-      - routeros_command:
+       name: Add user
+        routeros_command:
          commands:
-           - :/user add name=test group=test password=test
+         - :/user add name=test group=test password=test
