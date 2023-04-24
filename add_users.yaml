@@ -5,8 +5,6 @@
    - ansible_network_os: routeros
    - ansible_user: admin
   tasks:
-  
-    - name: Add test user
-      routeros_command:
-       commands: /user add name=test group=test password=test
+      - routeros_command:
+         commands: /user add name=test group=test password=test
 
