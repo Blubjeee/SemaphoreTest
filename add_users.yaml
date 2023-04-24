@@ -1,15 +1,15 @@
 ---
-  - hosts: 192.168.200.71
-    connection: network_cli
-    gather_facts: no
+- hosts: 192.168.200.71
+  connection: network_cli
+   ather_facts: no
 
-  - vars:
-     ansible_network_os: routeros
-     ansible_user: admin
+- vars:
+   ansible_network_os: routeros
+   ansible_user: admin
+   
+- tasks:
 
-  - tasks:
-
-       - name: Add user
-         routeros_command:
-          commands:
-            :/user add name=test group=test password=test
+     - name: Add user
+       routeros_command:
+        commands:
+          :/user add name=test group=test password=test
