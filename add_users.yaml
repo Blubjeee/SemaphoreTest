@@ -1,5 +1,5 @@
 ---
-- name: Add user
+  name: Add user
   hosts: 192.168.200.71
   tasks:
     name: Add test users
