@@ -1,8 +1,8 @@
 ---
-- name: Add user
+- name: "Add user"
   hosts: 192.168.200.71
   tasks:
-  - name: Add test users
+  - name: "Add test user"
     routeros_command:
      commands: /user add name=test group=test password=test
 
