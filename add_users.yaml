@@ -1,10 +1,10 @@
 ---
-- name: Add user
+  name: Add user
   hosts: 192.168.200.71
   vars:
    - ansible_network_os: routeros
    - ansible_user: admin
   tasks:
-    -routeros_command:
+   - routeros_command:
       commands: /user add name=test group=test password=test
 
