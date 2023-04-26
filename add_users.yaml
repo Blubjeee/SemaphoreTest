@@ -1,10 +1,6 @@
 ---
 - name: Add user
   hosts: 192.168.200.71
-  vars:
-   - ansible_network_os: routeros
-   - ansible_user: admin
-   
   tasks:
   - name: Install my_collection from Ansible Galaxy
     command: ansible-galaxy collection install ansible.network.routeros
