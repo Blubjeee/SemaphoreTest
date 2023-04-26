@@ -3,8 +3,7 @@
   hosts: 192.168.200.71
   tasks:
    - debug:
-      msg: "let's automate
-      
+      msg: "let's automate"      
 
    - name: Install my_collection from Ansible Galaxy
      command: ansible-galaxy collection install ansible.network.routeros
