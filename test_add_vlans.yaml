@@ -1,12 +1,7 @@
 ---
-- hosts: localhost
-  connection: network_cli
+- name: test add vlans
+  hosts: localhost
   gather_facts: no
-
-  vars:
-    ansible_network_os: routeros
-    ansible_user: admin
-
   tasks:
     - debug:
       msg: "Let's AUTOMATE"
