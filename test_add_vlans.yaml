@@ -8,7 +8,9 @@
     ansible_user: admin
 
   tasks:
-
+    - debug:
+      msg: "Let's AUTOMATE"
+      
     - name: Adding VLANs
       routeros_command:
         commands:
