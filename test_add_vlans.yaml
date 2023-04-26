@@ -10,9 +10,3 @@
   tasks:
     - debug:
       msg: "Let's AUTOMATE"
-      
-    - name: Adding VLANs
-      routeros_command:
-        commands:
-          - :local x
-          - :for x from 20 to 30 do={/interface vlan add vlan-id_$x name="VLAN_$x" interface=ether2}
