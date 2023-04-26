@@ -1,11 +1,15 @@
 ---
-- name: Add RouterOS commands
-  hosts: 192.168.200.71
+- name: using a REST API
+  hosts: localhost
+  gather_facts: false
   tasks:
-   - debug:
-      msg: "let's automate
-      
-
-   - name: Install my_collection from Ansible Galaxy
-     command: ansible-galaxy collection install ansible.network.routeros
-     become: true
+    - debug:
+        msg: "Let's Automate"
+    
+    - name: Fetch all interfaces of the mikrotik router
+      uri:
+        url: http://192.168.200.71/rest/interface
+        method: GET
+        url_username: admin
+        force_basic_auth: yes
+        validate_certs: false
