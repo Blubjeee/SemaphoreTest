@@ -1,15 +1,10 @@
 ---
 - name: Add RouterOS commands
   hosts: localhost
-  vars:
-    - ansible_network_os: routeros
-    - ansible_user: admin
   tasks:
-    - debug:
-        msg: "let's automate"      
+   - debug:
+      msg: "let's automate"      
 
-    - name: Adding VLANs
-      routeros_command:
-        commands:
-          - :local x
-          - :for x from 20 to 30 do={/interface vlan add vlan-id_$x name="VLAN_$x" interface=ether2}
+   - name: Install my_collection from Ansible Galaxy
+     command: ansible-galaxy collection install ansible.network.routeros
+     become: true
