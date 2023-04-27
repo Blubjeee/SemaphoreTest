@@ -1,7 +1,7 @@
 ---
 - name: Show message on RouterOS router
 - hosts: 192.168.200.71
-  gather_facts: no 
+- gather_facts: no 
 
   vars:
     routeros_api_user: admin
