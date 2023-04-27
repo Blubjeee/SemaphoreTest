@@ -3,6 +3,6 @@
   hosts: 192.168.200.71
   tasks:   
     - name: Adding VLANs
-      community.network.routeros_command:
+      community.network.routeros.command:
         commands:
           - /interface ethernet print
