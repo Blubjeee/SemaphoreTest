@@ -7,6 +7,7 @@
    routeros_api_user: admin
    routeros_api_password: 
    routeros_api_host: 192.168.200.71
+   routeros_api_port: 22
 
   tasks:
    - name: Send message to RouterOS router
