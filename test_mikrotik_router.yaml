@@ -14,4 +14,4 @@
         username: "{{ routeros_api_user }}"
         port: "{{ routeros_api_port }}"
         api_path: '/tool/torch'
-        api_command: 'interface=ether1 message="Hello, world!"
+        api_command: 'interface=ether1 message="Hello, world!"'
