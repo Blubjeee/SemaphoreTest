@@ -1,6 +1,6 @@
 ---
 - name: Show message on RouterOS router
-  hosts: 192.168.200.71
+- hosts: 192.168.200.71
   gather_facts: no 
 
   vars:
