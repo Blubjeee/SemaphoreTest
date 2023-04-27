@@ -5,5 +5,4 @@
     - name: Adding VLANs
       community.routeros.command:
         commands:
-          - :local x
-          - :for x from 20 to 30 do={/interface vlan add vlan-id_$x name="VLAN_$x" interface=ether2}
+          - /interface ethernet print
