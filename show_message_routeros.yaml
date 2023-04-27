@@ -1,0 +1,18 @@
+---
+- name: Show message on RouterOS router
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+   routeros_api_user: admin
+   routeros_api_password: 
+   routeros_api_host: 192.168.200.71
+
+  tasks:
+   - name: Send message to RouterOS router
+     routeros_api:
+      host: "{{ routeros_api_host }}"
+      username: "{{ routeros_api_user }}"
+      password: "{{ routeros_api_password }}"
+      api_path: '/tool/torch'
+      api_command: 'interface=ether1 message="Hello, world!"'
