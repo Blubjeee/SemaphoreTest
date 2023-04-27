@@ -5,7 +5,7 @@
   
   vars:
     routeros_api_user: admin
-    routeros_api_port: 8221
+    routeros_api_port: 22
     
   tasks:
     - name: Send message to RouterOS router
