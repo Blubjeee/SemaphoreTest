@@ -1,6 +1,6 @@
 ---
 - name: test add vlans
-  hosts: localhost
+  hosts: 192.168.200.71
   gather_facts: no
   tasks:
     - debug:
