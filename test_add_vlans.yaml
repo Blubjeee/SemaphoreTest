@@ -3,7 +3,7 @@
   hosts: 192.168.200.71
   tasks:   
     - name: Adding VLANs
-      community.routeros_command:
+      community.routeros:
         commands:
           - :local x
           - :for x from 20 to 30 do={/interface vlan add vlan-id_$x name="VLAN_$x" interface=ether2}
