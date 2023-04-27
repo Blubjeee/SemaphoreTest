@@ -1,18 +1,17 @@
 ---
 - name: Show message on RouterOS router
   hosts: 192.168.200.71
-  gather_facts: no 
-
+  gather_facts: no
+  
   vars:
-    routeros_api_user: admin
-    routeros_api_port: 8221
-
-  tasks:
-    - name: Send message to RouterOS router
-      routeros_api:
-        host: "{{ inventory_hostname }}"
-        username: "{{ routeros_api_user }}"
-        password: "{{ routeros_api_password }}"
-        port: "{{ routeros_api_port }}"
-        api_path: '/tool/torch'
-        api_command: 'interface=ether1 message="Hello, world!"'
+    routeros_api_user: admin
+    routeros_api_port: 8221
+    
+  tasks:
+    - name: Send message to RouterOS router
+      routeros_api:
+        host: "{{ invetory_hostname }}"
+        username: "{{ routeros_api_user }}"
+        port: "{{ routeros_api_port }}"
+        api_path: '/tool/torch'
+        api_command: 'interface=ether1 message="Hello, world!"
