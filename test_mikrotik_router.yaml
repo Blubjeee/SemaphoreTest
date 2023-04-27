@@ -1,0 +1,25 @@
+---
+- name: Test MikroTik Router
+  hosts: 192.168.200.71
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: Check router availability
+      ping:
+ 
+    - name: Test DNS resolution
+      command: nslookup google.com
+      register: dns_result
+
+    - name: Print DNS result
+      debug:
+        var: dns_result.stdout_lines
+
+    - name: Test Internet connectivity
+      command: ping -c 4 google.com
+      register: internet_result
+
+    - name: Print Internet result
+      debug:
+        var: internet_result.stdout_lines
