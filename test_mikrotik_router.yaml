@@ -1,24 +1,18 @@
 ---
-- name: Test MikroTik Router
-  hosts: 192.168.200.71
-  gather_facts: no
+- name: Show message on RouterOS router
+  hosts: 192.168.200.71
+  gather_facts: no 
 
-  tasks:
-    - name: Check router availability
-      ping:
- 
-    - name: Test DNS resolution
-      command: nslookup google.com
-      register: dns_result
+  vars:
+    routeros_api_user: admin
+    routeros_api_port: 8221
 
-    - name: Print DNS result
-      debug:
-        var: dns_result.stdout_lines
-
-    - name: Test Internet connectivity
-      command: ping -c 4 google.com
-      register: internet_result
-
-    - name: Print Internet result
-      debug:
-        var: internet_result.stdout_lines
+  tasks:
+    - name: Send message to RouterOS router
+      routeros_api:
+        host: "{{ inventory_hostname }}"
+        username: "{{ routeros_api_user }}"
+        password: "{{ routeros_api_password }}"
+        port: "{{ routeros_api_port }}"
+        api_path: '/tool/torch'
+        api_command: 'interface=ether1 message="Hello, world!"'
