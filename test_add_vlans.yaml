@@ -3,4 +3,4 @@
   hosts: localhost
   tasks:
     - debug:
-      msg: "Let's AUTOMATE"
+        msg: "Let's AUTOMATE"
