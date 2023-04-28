@@ -1,0 +1,21 @@
+---
+- name: Show message on MikroTik router
+  hosts: 192.168.200.71
+  gather_facts: no
+  
+  vars_prompt:
+    - name: "router_api_user"
+      prompt: "Enter RouterOS API username"
+      private: no
+    - name: "router_api_password"
+      prompt: "Enter RouterOS API password"
+      private: yes
+      
+  tasks:
+    - name: Send message to MikroTik router
+      routeros_api:
+        host: "{{ inventory_hostname }}"
+        username: "{{ routeros_api_user }}"
+        password: "{{ routeros_api_password }}"
+        api_path: '/tool/torch'
+        api_command: 'interface=ether1 message="Hello, world!"'
